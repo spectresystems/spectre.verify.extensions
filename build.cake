@@ -45,21 +45,28 @@ Task("Publish-GitHub")
     var exitCode = 0;
     foreach(var file in context.GetFiles("./.artifacts/*.nupkg")) 
     {
-        context.Information("Publishing {0}...", file.GetFilename().FullPath);
-        exitCode += StartProcess("dotnet", 
-            new ProcessSettings {
-                Arguments = new ProcessArgumentBuilder()
-                    .Append("gpr")
-                    .Append("push")
-                    .AppendQuoted(file.FullPath)
-                    .AppendSwitchSecret("-k", " ", apiKey)
-            }
-        );
+        try
+        {
+            context.Information("Publishing {0}...", file.GetFilename().FullPath);
+            exitCode += StartProcess("dotnet", 
+                new ProcessSettings {
+                    Arguments = new ProcessArgumentBuilder()
+                        .Append("gpr")
+                        .Append("push")
+                        .AppendQuoted(file.FullPath)
+                        .AppendSwitchSecret("-k", " ", apiKey)
+                }
+            );
+        }
+        catch
+        {
+            // Ignore
+        }
     }
 
-    if(exitCode != 0) 
+    if (exitCode != 0) 
     {
-        throw new CakeException("Could not push GitHub packages.");
+        Information("Could not push one or more GitHub packages.");
     }
 });
 
