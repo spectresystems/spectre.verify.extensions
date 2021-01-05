@@ -7,6 +7,7 @@
     <MinVerSkip Condition="'$(Configuration)' == 'Debug'">true</MinVerSkip>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Label="Deterministic Build" Condition="'$(GITHUB_ACTIONS)' == 'true'">
@@ -19,11 +20,11 @@
     <Copyright>Spectre Systems AB</Copyright>
     <Authors>Patrik Svensson</Authors>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/spectresystems/spectre.console</RepositoryUrl>
+    <RepositoryUrl>https://github.com/spectresystems/spectre.verify.extensions</RepositoryUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/spectresystems/spectre.console</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/spectresystems/spectre.verify.extensions</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>https://github.com/spectresystems/spectre.console/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/spectresystems/spectre.verify.extensions/releases</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup Label="Package References">
