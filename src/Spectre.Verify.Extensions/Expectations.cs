@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
-using System.Threading;
 using VerifyTests;
 
 namespace Spectre.Verify.Extensions
@@ -13,9 +12,6 @@ namespace Spectre.Verify.Extensions
     /// </summary>
     public static class Expectations
     {
-        private static readonly HashSet<string> _encountered = new HashSet<string>(StringComparer.Ordinal);
-        private static readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
-
         /// <summary>
         /// Initializes the custom <see cref="DerivePathInfo"/> strategy.
         /// </summary>
@@ -95,10 +91,6 @@ namespace Spectre.Verify.Extensions
             // Get the suffix
             var suffix = nameAttribute.Suffix ?? "Output";
 
-            // Build an identifier and make sure it's unique
-            var identifier = $"{root}/{methodName}/{suffix}";
-            EnsureUnique(identifier);
-
             return new PathInfo(
                 directory: root,
                 typeName: methodName,
@@ -120,25 +112,6 @@ namespace Spectre.Verify.Extensions
             }
 
             return typeName.Replace('+', '.');
-        }
-
-        private static void EnsureUnique(string full)
-        {
-            try
-            {
-                _lock.Wait();
-
-                if (_encountered.Contains(full))
-                {
-                    throw new InvalidOperationException($"Found duplicate expectations: {full}");
-                }
-
-                _encountered.Add(full);
-            }
-            finally
-            {
-                _lock.Release();
-            }
         }
     }
 }
