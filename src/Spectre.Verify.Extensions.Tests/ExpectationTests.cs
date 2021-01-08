@@ -6,6 +6,7 @@ using Xunit;
 
 namespace Spectre.Verify.Extensions.Tests
 {
+    #region Usage
     [ExpectationPath("Foo")]
     public static class ExpectationTests
     {
@@ -36,7 +37,9 @@ namespace Spectre.Verify.Extensions.Tests
             }
         }
     }
+    #endregion
 
+    #region Initialize
     public static class VerifyConfig
     {
         [ModuleInitializer]
@@ -45,4 +48,5 @@ namespace Spectre.Verify.Extensions.Tests
             VerifierSettings.DerivePathInfo(Expectations.Initialize);
         }
     }
+    #endregion
 }
