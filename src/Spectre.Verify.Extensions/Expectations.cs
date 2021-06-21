@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
-using VerifyTests;
 
-namespace Spectre.Verify.Extensions
+namespace VerifyTests
 {
     /// <summary>
     /// Contains initialization logic for deriving path information.

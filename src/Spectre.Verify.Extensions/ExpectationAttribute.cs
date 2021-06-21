@@ -1,6 +1,6 @@
 using System;
 
-namespace Spectre.Verify.Extensions
+namespace VerifyTests
 {
     /// <summary>
     /// Attribute used to decorate test methods to indicate what
