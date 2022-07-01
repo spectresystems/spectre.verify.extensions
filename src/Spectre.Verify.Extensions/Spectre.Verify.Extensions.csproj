@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net48</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Verify" Version="16.3.2" />
-    <PackageReference Include="Verify.Xunit" Version="16.3.2" />
+    <PackageReference Include="Verify" Version="17.1.6" />
+    <PackageReference Include="Verify.Xunit" Version="17.1.6" />
   </ItemGroup>
 
   <ItemGroup>

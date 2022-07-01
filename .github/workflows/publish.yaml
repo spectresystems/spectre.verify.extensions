@@ -39,8 +39,6 @@ jobs:
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.101
 
       - name: Build
         shell: bash
@@ -65,8 +63,6 @@ jobs:
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.101
 
       - name: Publish
         shell: bash
