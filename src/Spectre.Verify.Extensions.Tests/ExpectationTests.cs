@@ -45,7 +45,7 @@ namespace Spectre.Verify.Extensions.Tests
         [ModuleInitializer]
         public static void Init()
         {
-            VerifierSettings.DerivePathInfo(Expectations.Initialize);
+            Verifier.DerivePathInfo(Expectations.Initialize);
         }
     }
     #endregion
