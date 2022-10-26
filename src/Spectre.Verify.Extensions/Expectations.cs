@@ -12,7 +12,7 @@ namespace VerifyTests
     public static class Expectations
     {
         /// <summary>
-        /// Initializes the custom <see cref="DerivePathInfo"/> strategy.
+        /// Initializes the custom <see cref="PathInfo"/> strategy.
         /// </summary>
         /// <param name="sourceFile">The source file.</param>
         /// <param name="projectDirectory">The directory of the project that the test was compile from.</param>
