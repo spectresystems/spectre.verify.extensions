@@ -12,7 +12,6 @@ namespace Spectre.Verify.Extensions.Tests
     {
         public static class MyOtherTestClass
         {
-            [UsesVerify]
             [ExpectationPath("Bar/Qux")]
             public class MyOtherOtherTestClass
             {
@@ -25,7 +24,6 @@ namespace Spectre.Verify.Extensions.Tests
             }
         }
 
-        [UsesVerify]
         [ExpectationPath("Baz")]
         public class YetAnotherTestClass
         {

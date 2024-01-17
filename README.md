@@ -27,7 +27,7 @@ public static class VerifyConfig
     }
 }
 ```
-<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L42-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-initialize' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L40-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-initialize' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Then the following test
@@ -40,7 +40,6 @@ public static class ExpectationTests
 {
     public static class MyOtherTestClass
     {
-        [UsesVerify]
         [ExpectationPath("Bar/Qux")]
         public class MyOtherOtherTestClass
         {
@@ -53,7 +52,6 @@ public static class ExpectationTests
         }
     }
 
-    [UsesVerify]
     [ExpectationPath("Baz")]
     public class YetAnotherTestClass
     {
@@ -66,7 +64,7 @@ public static class ExpectationTests
     }
 }
 ```
-<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L9-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L9-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will produce the following directory structure:
