@@ -16,7 +16,7 @@ https://nuget.org/packages/Spectre.Verify.Extensions/
 At startup pass `Expectations.Initialize` to [VerifierSettings.DerivePathInfo](https://github.com/VerifyTests/Verify/blob/master/docs/naming.md#derivepathinfo):
 
 <!-- snippet: Initialize -->
-<a id='snippet-initialize'></a>
+<a id='snippet-Initialize'></a>
 ```cs
 public static class VerifyConfig
 {
@@ -27,13 +27,13 @@ public static class VerifyConfig
     }
 }
 ```
-<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L40-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-initialize' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L40-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-Initialize' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Then the following test
 
 <!-- snippet: Usage -->
-<a id='snippet-usage'></a>
+<a id='snippet-Usage'></a>
 ```cs
 [ExpectationPath("Foo")]
 public static class ExpectationTests
@@ -64,7 +64,7 @@ public static class ExpectationTests
     }
 }
 ```
-<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L9-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Spectre.Verify.Extensions.Tests/ExpectationTests.cs#L9-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-Usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will produce the following directory structure:
