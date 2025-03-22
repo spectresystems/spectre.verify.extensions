@@ -4,47 +4,46 @@ using VerifyTests;
 using VerifyXunit;
 using Xunit;
 
-namespace Spectre.Verify.Extensions.Tests
-{
-    #region Usage
-    [ExpectationPath("Foo")]
-    public static class ExpectationTests
-    {
-        public static class MyOtherTestClass
-        {
-            [ExpectationPath("Bar/Qux")]
-            public class MyOtherOtherTestClass
-            {
-                [Fact]
-                [Expectation("Waldo")]
-                public async Task Test1()
-                {
-                    await Verifier.Verify("w00t");
-                }
-            }
-        }
+namespace Spectre.Verify.Extensions.Tests;
 
-        [ExpectationPath("Baz")]
-        public class YetAnotherTestClass
+#region Usage
+[ExpectationPath("Foo")]
+public static class ExpectationTests
+{
+    public static class MyOtherTestClass
+    {
+        [ExpectationPath("Bar/Qux")]
+        public class MyOtherOtherTestClass
         {
             [Fact]
-            [Expectation("Corgi", "Lol")]
+            [Expectation("Waldo")]
             public async Task Test1()
             {
-                await Verifier.Verify("lol");
+                await Verifier.Verify("w00t");
             }
         }
     }
-    #endregion
 
-    #region Initialize
-    public static class VerifyConfig
+    [ExpectationPath("Baz")]
+    public class YetAnotherTestClass
     {
-        [ModuleInitializer]
-        public static void Init()
+        [Fact]
+        [Expectation("Corgi", "Lol")]
+        public async Task Test1()
         {
-            Verifier.DerivePathInfo(Expectations.Initialize);
+            await Verifier.Verify("lol");
         }
     }
-    #endregion
 }
+#endregion
+
+#region Initialize
+public static class VerifyConfig
+{
+    [ModuleInitializer]
+    public static void Init()
+    {
+        Verifier.DerivePathInfo(Expectations.Initialize);
+    }
+}
+#endregion
